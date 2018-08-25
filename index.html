@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Metro Tracker</title>
+    <link rel="stylesheet" href="https://jsdev.arcgis.com/4.7/esri/themes/dark-blue/main.css">
+    <link rel="stylesheet" href="dist/StationTracker.css">
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      if (window.Notification) {
+        Notification.requestPermission();
+      }
+    </script>
+    <script>
+      var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+      window.dojoConfig = {
+        async: true,
+        packages: [
+          {
+            name: "app",
+            location: locationPath + "/dist",
+            main: "app"
+          }
+        ]
+      };
+    </script>
+    <script src="https://jsdev.arcgis.com/4.7/"></script>
+  </head>
+  <body>
+    <div id="viewDiv">
+      <div class="station-tracker__dashboard">
+        <div class="RD"></div>
+        <div class="OR"></div>
+        <div class="YL"></div>
+        <div class="GR"></div>
+        <div class="BL"></div>
+        <div class="SV"></div>
+        <div class="YLRP"></div>
+      </div>
+    </div>
+    <script>
+      require(["app", "dojo/text!./dist/metroData.json"], function(app, metroData) {
+        app.start(JSON.parse(metroData));
+      });
+    </script>
+  </body>
+</html>

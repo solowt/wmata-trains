@@ -1,0 +1,47 @@
+.station-tracker {
+	width: 125px;
+	height: 125px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+h5.station-tracker__line-name {
+	text-align: center;
+	margin-top: 1em;
+}
+.station-tracker__track-count {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.station-tracker__track-count__number {
+	color: #69dcff;
+	text-align: center;
+	font-size: 10px;
+}
+.station-tracker__track-label {
+	cursor: pointer;
+}
+.station-tracker__track-label:hover {
+	color: #69dcff;
+}
+.station-tracker div.station-tracker__label-toggle {
+	margin-top: .5em;
+	font-size: 25px;
+}
+.station-tracker__label-toggle--highlighted {
+	color: white;
+	background-color: #060606;
+}
+.station-tracker__tools-holder {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.station-tracker__dashboard {
+	position: absolute;
+	display: flex;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 10px;
+	padding: 10px;
+}
